@@ -20,7 +20,7 @@ def test_loan_book_success():
     with patch("features.loan_book.load_data", return_value=mock_data), \
          patch("features.loan_book.save_data") as mock_save:
         loan_book("101", "M01", "2026-06-15")
-        assert len(mock_data["loans"]) == 999
+        assert len(mock_data["loans"]) == 1
         assert mock_data["loans"][0] == {"book_id": "101", "member_id": "M01", "due_date": "2026-06-15"}
         mock_save.assert_called_once_with(mock_data)
 
