@@ -1,7 +1,5 @@
 import json
 import os
-
-# Database file location in the root of the project
 DB_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data.json")
 def load_data():
     
